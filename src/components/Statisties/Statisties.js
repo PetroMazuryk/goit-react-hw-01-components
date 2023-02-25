@@ -1,32 +1,29 @@
 import PropTypes from 'prop-types';
 import {
-  Container,
+  Section,
   Title,
-  List,
-  ListItem,
-  Label,
-  Percentage,
-} from './Statisties.styled';
+  StatsList,
+  StatsItem,
+  StatsLabel,
+  StatsPercentage,
+} from './Statistics.styled';
 
 export const Statistics = ({ title, stats }) => {
-  const StatElems = ({ data }) => {
-    return data.map(({ label, percentage, id }) => {
-      return (
-        <ListItem key={id}>
-          <Label>{label}</Label>
-          <Percentage>{percentage}</Percentage>
-        </ListItem>
-      );
-    });
-  };
-
   return (
-    <Container>
+    <Section>
       {title && <Title>{title}</Title>}
-      <List>
-        <StatElems data={stats} />
-      </List>
-    </Container>
+
+      <StatsList>
+        {stats.map(({ id, label, percentage }) => {
+          return (
+            <StatsItem key={id}>
+              <StatsLabel>{label}</StatsLabel>
+              <StatsPercentage>{percentage}%</StatsPercentage>
+            </StatsItem>
+          );
+        })}
+      </StatsList>
+    </Section>
   );
 };
 
@@ -34,9 +31,9 @@ Statistics.propTypes = {
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
+      id: PropTypes.string.isRequired,
       label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
-      id: PropTypes.string.isRequired,
     })
-  ).isRequired,
+  ),
 };

@@ -5,7 +5,7 @@ export const GlobalStyle = createGlobalStyle`
 :root {
           --black: #000;
           --grey: #777777;
-          --bg-grey: #e7f5f9;
+          --bg-grey: #8ae6e4;
           --aqua: #25b0d3;
         }
 
@@ -22,11 +22,7 @@ export const GlobalStyle = createGlobalStyle`
           font-size: 12px;
    padding-left: 100px
   }
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-      
-  }
+ 
 
   h1,
         h2,

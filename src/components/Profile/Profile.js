@@ -15,7 +15,7 @@ import {
 } from './Profile.styled';
 
 export const Profile = ({
-  user: { username = 'username', tag, location, avatar = defaultImg, stats },
+  user: { username = 'User Name', tag, location, avatar = defaultImg, stats },
 }) => {
   return (
     <Container>
@@ -49,7 +49,7 @@ Profile.propTypes = {
     username: PropTypes.string.isRequired,
     tag: PropTypes.string.isRequired,
     location: PropTypes.string.isRequired,
-    // avatar: PropTypes.string.isRequired,
+    avatar: PropTypes.string.isRequired,
     stats: PropTypes.shape({
       followers: PropTypes.number.isRequired,
       views: PropTypes.number.isRequired,

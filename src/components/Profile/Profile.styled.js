@@ -60,6 +60,7 @@ export const StatListItem = styled.li`
 `;
 
 export const StatLabel = styled.span`
+  font-size: 14px;
   display: block;
   margin-bottom: 5px;
   color: var(--grey);
