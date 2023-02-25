@@ -1,16 +1,26 @@
+import { GlobalStyle } from './GlobalStyle';
+import { Layout } from './Layout/Layout';
+
+import { Profile } from './Profile/Profile';
+import { Statistics } from './Statisties/Statisties';
+import { RecipeList } from './RecipeList/RecipeList';
+import { TransactionHistory } from './TransactionHistory/TransactionHistory';
+
+import user from '../data/user';
+import data from '../data/data';
+import friends from '../data/friends';
+
+import transactions from '../data/transactions';
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <Layout>
+      <GlobalStyle />
+      <Profile user={user} />
+      <Statistics stats={data} />
+
+      <RecipeList items={friends} />
+      <TransactionHistory transactions={transactions} />
+    </Layout>
   );
 };
