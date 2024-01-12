@@ -15,14 +15,13 @@ import {
 } from './Profile.styled';
 
 export const Profile = ({
-  user: { username = 'User Name', tag, location, avatar = defaultImg, stats },
+  user: { username, tag, location, avatar, stats },
 }) => {
   return (
     <Container>
       <UserThumb>
-        <Avatar src={avatar} alt="User avatar" />
-        <UserName>{username}</UserName>
-        <UserTag>@{tag}</UserTag>
+        <Avatar src={avatar ?? defaultImg} alt="User avatar" />
+        <UserName>{username}</UserName>"<UserTag>@{tag}</UserTag>
         <Location>{location}</Location>
       </UserThumb>
 
